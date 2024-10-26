@@ -1,0 +1,805 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+        <meta charset="UTF-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+        <title>Damas</title>
+        <style>
+            *{
+                margin: 0;
+                padding:0;
+                border: none;              
+                text-decoration: none;
+                list-style-type: none;
+                font-family: "Monaco", "Helvetica", monospace;
+            }
+            body{
+                
+                height: 100vh;
+                background-color: #faf2a1;
+                
+            }
+
+            .press-start-2p-regular {
+              font-family: "Press Start 2P", system-ui;
+              font-weight: 400;
+              font-style: normal;
+              
+            }
+            
+            #tabuleiro{
+                box-shadow: 20px 20px;
+                width: 640px;
+                height: 640px;
+                margin: 0 auto;
+                border: 15px solid #cea980;
+                border-radius: 15px;
+                display: flex;
+                flex-direction: row;
+                flex-wrap: wrap;
+                align-items: center; 
+                transition: 0.5s;                           
+            }
+
+            #tabuleiro:hover{
+                box-shadow: 25px 25px;
+                transform: scale(1.0025);
+            }
+
+            #container-pecas{
+                display: flex;
+                flex-direction: row;
+                flex-wrap: wrap;
+                align-items: center; 
+            }
+
+            .white-cell{
+              width: 80px;
+              height: 80px;              
+              background-color: #e84855;
+              display: flex;
+              flex-direction: row;
+              flex-wrap: wrap;
+              align-items: center;
+              justify-content: center;
+           
+            }
+
+            .black-cell{
+              width: 80px;
+              height: 80px;
+              background-color: black;
+              display: flex;
+              flex-direction: row;
+              flex-wrap: wrap;
+              align-items: center;
+              justify-content: center;
+            
+                     
+            }
+            .peca-escura:hover{
+                transform: scale(1.1);
+                cursor: pointer;
+
+            }
+            .peca-clara:hover{
+                transform: scale(1.1);
+                cursor: pointer;           
+            }
+
+            #txt-head{
+                font-size: 72px;
+                margin: 50px 0;
+                color: #466060;
+                text-shadow: 2px 2px #e84855;
+                transition: 0.5s;
+            }
+
+            #txt-head:hover{
+                text-shadow: 5px 5px #e84855;
+                cursor: pointer;
+            }
+          
+        </style>
+    </head>
+    <body>
+        <div style="text-align: center;">
+            <h1 class="press-start-2p-regular" id="txt-head">CHECKERS
+        </h1>
+        </div>
+        <div id="container-tabuleiro">
+        <div class="container-pecas"></div>
+        <div id="tabuleiro">
+            <div class="white-cell"></div>
+            <div id="cell-12" class="black-cell"><img id="peca-escura-1" class="peca-escura" src="peca-escura.png" width="70" ></div>
+            <div class="white-cell"></div>
+            <div id="cell-14" class="black-cell"><img id="peca-escura-2" class="peca-escura" src="peca-escura.png" width="70"></div>
+            <div class="white-cell"></div>
+            <div id="cell-16" class="black-cell"><img id="peca-escura-3" class="peca-escura" src="peca-escura.png" width="70"></div>
+            <div class="white-cell"></div>
+            <div id="cell-18" class="black-cell"><img id="peca-escura-4" class="peca-escura" src="peca-escura.png" width="70"></div>
+
+            <div id="cell-21" class="black-cell"><img id="peca-escura-5" class="peca-escura" src="peca-escura.png" width="70"></div>
+            <div class="white-cell"></div>
+            <div id="cell-23" class="black-cell"><img id="peca-escura-6" class="peca-escura" src="peca-escura.png" width="70"></div>
+            <div class="white-cell"></div>
+            <div id="cell-25" class="black-cell"><img id="peca-escura-7" class="peca-escura" src="peca-escura.png" width="70"></div>
+            <div class="white-cell"></div>
+            <div id="cell-27" class="black-cell"><img id="peca-escura-8" class="peca-escura" src="peca-escura.png" width="70"></div>
+            <div class="white-cell"></div>
+
+            <div class="white-cell"></div>
+            <div id="cell-32"  class="black-cell"><img id="peca-escura-9" class="peca-escura" src="peca-escura.png" width="70"></div>
+            <div class="white-cell"></div>
+            <div id="cell-34" class="black-cell"><img id="peca-escura-10" class="peca-escura" src="peca-escura.png" width="70"></div>
+            <div class="white-cell"></div>
+            <div id="cell-36" class="black-cell"><img id="peca-escura-11" class="peca-escura" src="peca-escura.png" width="70"></div>
+            <div class="white-cell"></div>
+            <div id="cell-38" class="black-cell"><img id="peca-escura-12" class="peca-escura" src="peca-escura.png" width="70"></div>
+
+            <div id="cell-41" class="black-cell"></div>
+            <div class="white-cell"></div>
+            <div id="cell-43" class="black-cell"></div>
+            <div class="white-cell"></div>
+            <div id="cell-45" class="black-cell"></div>
+            <div class="white-cell"></div>
+            <div id="cell-47" class="black-cell"></div>
+            <div class="white-cell"></div>
+
+            <div class="white-cell"></div>
+            <div id="cell-52" class="black-cell"></div>
+            <div class="white-cell"></div>
+            <div id="cell-54" class="black-cell"></div>
+            <div class="white-cell"></div>
+            <div id="cell-56" class="black-cell"></div>
+            <div class="white-cell"></div>
+            <div id="cell-58" class="black-cell"></div>
+
+            <div id="cell-61" class="black-cell"><img id="peca-clara-1" class="peca-clara" src="peca-clara.png" width="70"></div>
+            <div class="white-cell"></div>
+            <div id="cell-63" class="black-cell"><img id="peca-clara-2" class="peca-clara" src="peca-clara.png" width="70"></div>
+            <div class="white-cell"></div>
+            <div id="cell-65" class="black-cell"><img id="peca-clara-3" class="peca-clara" src="peca-clara.png" width="70"></div>
+            <div class="white-cell"></div>
+            <div id="cell-67" class="black-cell"><img id="peca-clara-4" class="peca-clara" src="peca-clara.png" width="70"></div>            
+            <div class="white-cell"></div>
+
+            <div class="white-cell"></div>
+            <div id="cell-72" class="black-cell"><img id="peca-clara-5" class="peca-clara" src="peca-clara.png" width="70"></div>
+            <div class="white-cell"></div>
+            <div id="cell-74" class="black-cell"><img id="peca-clara-6" class="peca-clara" src="peca-clara.png" width="70"></div>
+            <div class="white-cell"></div>
+            <div id="cell-76" class="black-cell"><img id="peca-clara-7" class="peca-clara" src="peca-clara.png" width="70"></div>
+            <div class="white-cell"></div>
+            <div id="cell-78" class="black-cell"><img id="peca-clara-8" class="peca-clara" src="peca-clara.png" width="70"></div>
+            
+            <div id="cell-81" class="black-cell"><img id="peca-clara-9" class="peca-clara" src="peca-clara.png" width="70"></div>
+            <div class="white-cell"></div>
+            <div id="cell-83" class="black-cell"><img id="peca-clara-10" class="peca-clara" src="peca-clara.png" width="70"></div>
+            <div class="white-cell"></div>
+            <div id="cell-85" class="black-cell"><img id="peca-clara-11" class="peca-clara" src="peca-clara.png" width="70"></div>
+            <div class="white-cell"></div>
+            <div id="cell-87" class="black-cell"><img id="peca-clara-12" class="peca-clara" src="peca-clara.png" width="70"></div>            
+            <div class="white-cell"></div>   
+        </div>
+        </div>
+        <script >
+
+           var pecasEscuras = $('.peca-escura');
+           var pecasClaras = $('.peca-clara');
+
+           for(let i = 0; i < pecasEscuras.length; i++){
+
+                pecasEscuras[i].draggable = true;
+                pecasEscuras[i].ondragstart = drag;
+                pecasEscuras[i].ondragend = paintDefaultColorCells;
+           }
+
+           for(let i = 0; i < pecasClaras.length; i++){
+
+                pecasClaras[i].draggable = true;
+                pecasClaras[i].ondragstart = drag;
+                pecasClaras[i].ondragend = paintDefaultColorCells;
+            
+           }
+
+            
+           
+           function allowDrop(ev){
+
+                ev.preventDefault();
+           }
+           
+
+           function drag(ev){
+
+                ev.dataTransfer.setData("text", ev.target.id);
+
+                const coluna = parseInt(ev.target.parentNode.id.substr(-1));
+                const linha = parseInt(ev.target.parentNode.id.substr(5,1));
+                let celulaAtualId = ("cell-" + linha + coluna);
+
+                document.getElementById(celulaAtualId).removeEventListener('drop', drop);
+                document.getElementById(celulaAtualId).removeEventListener('dragover',allowDrop);
+                
+                var idPecaAtualEscura = ev.target.id.substr(0,11);
+                
+                if ( idPecaAtualEscura == "peca-escura" ){ //PEÇA ESCURA
+                    let linhaSul = linha + 1;
+                    let linhaNorte = linha - 1;
+                    let colunaOeste = coluna - 1;
+                    let colunaLeste = coluna + 1;
+                    
+                    let celulaSudEsteId = ("cell-" + linhaSul + colunaLeste);
+                    let celulaSudOEsteId = ("cell-" + linhaSul + colunaOeste);
+                    let celulaNordEsteId = ("cell-" + linhaNorte + colunaLeste);
+                    let celulaNorOesteId = ("cell-" + linhaNorte + colunaOeste);
+                        
+                    if( coluna > 1 && coluna < 8 && linha > 1 && linha < 8){
+
+                        if( !document.getElementById(celulaSudEsteId).hasChildNodes() ){
+                        document.getElementById(celulaSudEsteId).addEventListener('drop', drop);
+                        document.getElementById(celulaSudEsteId).addEventListener('dragover',allowDrop);
+                        paintPossibleMovesCells(celulaSudEsteId);
+
+                        }else{
+
+                        document.getElementById(celulaSudEsteId).removeEventListener('drop', drop);
+                        document.getElementById(celulaSudEsteId).removeEventListener('dragover',allowDrop);
+                        }               
+                    
+                        if( !document.getElementById(celulaSudOEsteId).hasChildNodes()  ){ 
+
+                        document.getElementById(celulaSudOEsteId).addEventListener('drop', drop);
+                        document.getElementById(celulaSudOEsteId).addEventListener('dragover',allowDrop);
+                        paintPossibleMovesCells(celulaSudOEsteId);    
+                
+                        }else{
+
+                        document.getElementById(celulaSudOEsteId).removeEventListener('drop', drop);
+                        document.getElementById(celulaSudOEsteId).removeEventListener('dragover',allowDrop);
+                        }
+
+                        document.getElementById(celulaNordEsteId).removeEventListener('drop', drop);
+                        document.getElementById(celulaNordEsteId).removeEventListener('dragover',allowDrop);
+
+                        document.getElementById(celulaNorOesteId).removeEventListener('drop', drop);
+                        document.getElementById(celulaNorOesteId).removeEventListener('dragover',allowDrop);
+
+                        console.log(celulaSudEsteId);
+
+                        console.log(celulaSudOEsteId);
+                    }
+
+                    if(  coluna == 1 && linha > 1 && linha < 8 ){
+
+                        if( !document.getElementById(celulaSudEsteId).hasChildNodes() ){
+
+                            document.getElementById(celulaSudEsteId).addEventListener('drop', drop);
+                            document.getElementById(celulaSudEsteId).addEventListener('dragover',allowDrop);
+                            paintPossibleMovesCells(celulaSudEsteId);
+
+                        }else{
+
+                            document.getElementById(celulaSudEsteId).removeEventListener('drop', drop);
+                            document.getElementById(celulaSudEsteId).removeEventListener('dragover',allowDrop);
+                        }    
+                       
+                        document.getElementById(celulaNordEsteId).removeEventListener('drop', drop);
+                        document.getElementById(celulaNordEsteId).removeEventListener('dragover',allowDrop);
+                    }
+
+                    if(  coluna > 1 && coluna < 8 && linha == 1 ){
+
+                        if( !document.getElementById(celulaSudEsteId).hasChildNodes() ){
+
+                            document.getElementById(celulaSudEsteId).addEventListener('drop', drop);
+                            document.getElementById(celulaSudEsteId).addEventListener('dragover',allowDrop);
+                            paintPossibleMovesCells(celulaSudEsteId);
+
+                        }else{
+
+                            document.getElementById(celulaSudEsteId).removeEventListener('drop', drop);
+                            document.getElementById(celulaSudEsteId).removeEventListener('dragover',allowDrop);
+                        } 
+                        
+                        if( !document.getElementById(celulaSudOEsteId).hasChildNodes() ){
+
+                            document.getElementById(celulaSudOEsteId).addEventListener('drop', drop);
+                            document.getElementById(celulaSudOEsteId).addEventListener('dragover',allowDrop);
+                            paintPossibleMovesCells(celulaSudOEsteId);
+
+                        }else{
+
+                            document.getElementById(celulaSudOEsteId).removeEventListener('drop', drop);
+                            document.getElementById(celulaSudOEsteId).removeEventListener('dragover',allowDrop);
+                        }   
+                        
+                        
+                        
+                    }
+
+                    if( coluna == 8 && linha == 1 ){                   
+                        
+                        if( !document.getElementById(celulaSudOEsteId).hasChildNodes() ){
+
+                            document.getElementById(celulaSudOEsteId).addEventListener('drop', drop);
+                            document.getElementById(celulaSudOEsteId).addEventListener('dragover',allowDrop);
+                            paintPossibleMovesCells(celulaSudOEsteId); 
+
+                        }else{
+
+                            document.getElementById(celulaSudOEsteId).removeEventListener('drop', drop);
+                            document.getElementById(celulaSudOEsteId).removeEventListener('dragover',allowDrop);
+                        }   
+                        
+                                          
+                    }
+                    
+                    if( coluna == 8 && linha > 1 && linha < 8 ){
+
+                        if( !document.getElementById(celulaSudOEsteId).hasChildNodes() ){
+
+                            document.getElementById(celulaSudOEsteId).addEventListener('drop', drop);
+                            document.getElementById(celulaSudOEsteId).addEventListener('dragover',allowDrop);
+                            paintPossibleMovesCells(celulaSudOEsteId);
+
+                        }else{
+
+                            document.getElementById(celulaSudOEsteId).removeEventListener('drop', drop);
+                            document.getElementById(celulaSudOEsteId).removeEventListener('dragover',allowDrop);
+                        }    
+                       
+                        document.getElementById(celulaNorOesteId).removeEventListener('drop', drop);
+                        document.getElementById(celulaNorOesteId).removeEventListener('dragover',allowDrop);
+                    }
+
+                    //regra come peça
+                    //SUDESTE
+                    if( linha >= 1 && linha <= 6 && coluna <= 6 ){
+                            let coordCaughtSouthEste = [linha + 2, coluna + 2];
+                        let coordOpponetCellEste = [linha + 1, coluna + 1];
+                        let cellSouthEsteOpponentId = 'cell-' + coordOpponetCellEste[0] + coordOpponetCellEste[1];               
+                        let cellCaughtSouthEsteId = 'cell-' + coordCaughtSouthEste[0] + coordCaughtSouthEste[1];
+                        let cellCaughtSouthEste = document.getElementById(cellCaughtSouthEsteId);
+                        let cellOpponentSouthEste = document.getElementById(cellSouthEsteOpponentId);
+                        let pieceOpponentClassName = cellOpponentSouthEste.hasChildNodes() ?cellOpponentSouthEste.firstChild.className : null;
+                        
+                        if(cellCaughtSouthEste != null && !cellCaughtSouthEste.hasChildNodes() && cellOpponentSouthEste.hasChildNodes() && pieceOpponentClassName == 'peca-clara'){//celula existe e está vazia
+                            cellCaughtSouthEste.addEventListener("drop", drop);
+                            cellCaughtSouthEste.addEventListener("drop", function(){
+                                cellOpponentSouthEste.removeChild(cellOpponentSouthEste.firstChild);
+
+                                const node = document.createElement('video');
+                                const nodeSource = document.createElement('source');
+                                nodeSource.src = 'video.mp4';
+                                nodeSource.type = 'video/mp4';
+                                node.width = '80';
+                                node.height = '80';
+                                node.autoplay = true;
+                                node.muted = true;
+                                node.appendChild(nodeSource);
+                                cellOpponentSouthEste.appendChild(node);
+                                setTimeout(function(){                                     
+                                    cellOpponentSouthEste.removeChild(cellOpponentSouthEste.firstChild);
+                                },1500)
+                            
+                            });
+                            cellCaughtSouthEste.addEventListener('dragover',allowDrop);
+                            paintPossibleMovesCells(cellCaughtSouthEsteId);
+                        } 
+                        
+                    }
+
+
+                    //SUDOESTE
+                    if( linha >= 1 && linha <= 6 && coluna > 2 ){
+                        let coordCaughtSouthWEste = [linha + 2, coluna - 2];
+                        let coordOpponetCellWest = [linha + 1, coluna - 1];
+                        let cellSouthWEsteOpponentId = 'cell-' + coordOpponetCellWest[0] + coordOpponetCellWest[1];               
+                        let cellCaughtSouthWesteId = 'cell-' + coordCaughtSouthWEste[0] + coordCaughtSouthWEste[1];
+                        let cellCaughtSouthWeste = document.getElementById(cellCaughtSouthWesteId);
+                        let cellOpponentSouthWeste = document.getElementById(cellSouthWEsteOpponentId);
+                        let pieceOpponentWestClassName = cellOpponentSouthWeste.hasChildNodes() ?cellOpponentSouthWeste.firstChild.className : null;
+                        
+                        if(cellCaughtSouthWeste != null && !cellCaughtSouthWeste.hasChildNodes() && cellOpponentSouthWeste.hasChildNodes() && pieceOpponentWestClassName == 'peca-clara'){//celula existe e está vazia
+                            cellCaughtSouthWeste.addEventListener('drop', drop);
+                            cellCaughtSouthWeste.addEventListener('drop', function(){
+                                cellOpponentSouthWeste.removeChild(cellOpponentSouthWeste.firstChild);                               
+
+                                const node = document.createElement('video');
+                                const nodeSource = document.createElement('source');
+                                nodeSource.src = 'video.mp4';
+                                nodeSource.type = 'video/mp4';
+                                node.width = '80';
+                                node.height = '80';
+                                node.autoplay = true;
+                                node.muted = true;
+                                node.appendChild(nodeSource);
+                                cellOpponentSouthWeste.appendChild(node);
+                                setTimeout(function(){
+                                    cellOpponentSouthWeste.removeChild(cellOpponentSouthWeste.firstChild);
+                                },1500)
+                            });
+                            cellCaughtSouthWeste.addEventListener('dragover',allowDrop);
+                            paintPossibleMovesCells(cellCaughtSouthWesteId);
+                        } 
+                    }
+
+                    //NORDESTE
+                    if( linha > 2 & coluna <= 6 ){
+                        let coordCaughtNorthEste = [linha - 2, coluna + 2];
+                        let coordOpponetCellNorthEste = [linha - 1, coluna + 1];
+                        let cellNorthEsteOpponentId = 'cell-' + coordOpponetCellNorthEste[0] + coordOpponetCellNorthEste[1];               
+                        let cellCaughtNorthesteId = 'cell-' + coordCaughtNorthEste[0] + coordCaughtNorthEste[1];
+                        let cellCaughtNorthEste = document.getElementById(cellCaughtNorthesteId);
+                        let cellOpponentNorthEste = document.getElementById(cellNorthEsteOpponentId);
+                        let pieceOpponentNorthEsteClassName = cellOpponentNorthEste.hasChildNodes() ?cellOpponentNorthEste.firstChild.className : null;
+                        
+                        if(cellCaughtNorthEste != null && !cellCaughtNorthEste.hasChildNodes() && cellOpponentNorthEste.hasChildNodes() && pieceOpponentNorthEsteClassName == 'peca-clara'){//celula existe e está vazia
+                            cellCaughtNorthEste.addEventListener('drop', drop);
+                            cellCaughtNorthEste.addEventListener('drop', function(){
+                                cellOpponentNorthEste.removeChild(cellOpponentNorthEste.firstChild);
+                                const node = document.createElement('video');
+                                const nodeSource = document.createElement('source');
+                                nodeSource.src = 'video.mp4';
+                                nodeSource.type = 'video/mp4';
+                                node.width = '80';
+                                node.height = '80';
+                                node.autoplay = true;
+                                node.muted = true;
+                                node.appendChild(nodeSource);
+                                cellOpponentNorthEste.appendChild(node);
+                                setTimeout(function(){
+                                    cellOpponentNorthEste.removeChild(cellOpponentNorthEste.firstChild);
+                                },1500)                         
+                            });
+                            cellCaughtNorthEste.addEventListener('dragover',allowDrop);
+                            paintPossibleMovesCells(cellCaughtNorthesteId);
+                        } 
+                    }
+
+
+                    //NOROESTE
+                    if( linha > 2 && coluna > 2){
+                        let coordCaughtNorthWeste = [linha - 2, coluna - 2];
+                        let coordOpponetCellNorthWeste = [linha - 1, coluna - 1];
+                        let cellNorthWesteOpponentId = 'cell-' + coordOpponetCellNorthWeste[0] + coordOpponetCellNorthWeste[1];               
+                        let cellCaughtNorthWesteId = 'cell-' + coordCaughtNorthWeste[0] + coordCaughtNorthWeste[1];
+                        let cellCaughtNorthWeste = document.getElementById(cellCaughtNorthWesteId);
+                        let cellOpponentNorthWeste = document.getElementById(cellNorthWesteOpponentId);
+                        let pieceOpponentNorthWesteClassName = cellOpponentNorthWeste.hasChildNodes() ?cellOpponentNorthWeste.firstChild.className : null;
+                        console.log(pieceOpponentNorthWesteClassName);
+                        if(cellCaughtNorthWeste != null && !cellCaughtNorthWeste.hasChildNodes() && cellOpponentNorthWeste.hasChildNodes() && pieceOpponentNorthWesteClassName == 'peca-clara'){//celula existe e está vazia
+                            cellCaughtNorthWeste.addEventListener('drop', drop);
+                            cellCaughtNorthWeste.addEventListener('drop', function(){
+                                cellOpponentNorthWeste.removeChild(cellOpponentNorthWeste.firstChild);const node = document.createElement('video');
+                                const nodeSource = document.createElement('source');
+                                nodeSource.src = 'video.mp4';
+                                nodeSource.type = 'video/mp4';
+                                node.width = '80';
+                                node.height = '80';
+                                node.autoplay = true;
+                                node.muted = true;
+                                node.appendChild(nodeSource);
+                                cellOpponentNorthWeste.appendChild(node);
+                                setTimeout(function(){
+                                    cellOpponentNorthWeste.removeChild(cellOpponentNorthWeste.firstChild);
+                                },1500)                         
+                            });
+                            cellCaughtNorthWeste.addEventListener('dragover',allowDrop);
+                            paintPossibleMovesCells(cellCaughtNorthWesteId);
+                        } 
+                    }                   
+                        
+                }// FIM PEÇA ESCURA
+
+                var idPecaAtualClara = ev.target.id.substr(0,10);
+
+                if ( idPecaAtualClara == "peca-clara" ) {
+
+                        let linhaSul = linha + 1;
+                        let linhaNorte = linha - 1;
+                        let colunaOeste = coluna - 1;
+                        let colunaLeste = coluna + 1;
+                        
+                        let celulaSudEsteId = ("cell-" + linhaSul + colunaLeste);
+                        let celulaSudOEsteId = ("cell-" + linhaSul + colunaOeste);
+                        let celulaNordEsteId = ("cell-" + linhaNorte + colunaLeste);
+                        let celulaNorOesteId = ("cell-" + linhaNorte + colunaOeste);
+
+                        if( coluna > 1 && coluna < 8 && linha > 1 && linha <= 8){
+
+                            if( !document.getElementById(celulaNordEsteId).hasChildNodes() ){
+
+                            document.getElementById(celulaNordEsteId).addEventListener('drop', drop);
+                            document.getElementById(celulaNordEsteId).addEventListener('dragover',allowDrop);
+                            paintPossibleMovesCells(celulaNordEsteId);                         
+                    
+                            }else{
+
+                                document.getElementById(celulaNordEsteId).removeEventListener('drop', drop);
+                                document.getElementById(celulaNordEsteId).removeEventListener('dragover',allowDrop);
+                            }               
+                        
+                            if( !document.getElementById(celulaNorOesteId).hasChildNodes()  ){
+
+                                document.getElementById(celulaNorOesteId).addEventListener('drop', drop);
+                                document.getElementById(celulaNorOesteId).addEventListener('dragover',allowDrop);                            
+                                paintPossibleMovesCells(celulaNorOesteId);  
+                                 
+                            }else{
+
+                                document.getElementById(celulaNorOesteId).removeEventListener('drop', drop);
+                                document.getElementById(celulaNorOesteId).removeEventListener('dragover',allowDrop);
+                            }
+                        
+                            //document.getElementById(celulaSudEsteId).removeEventListener('drop', drop);
+                            //document.getElementById(celulaSudEsteId).removeEventListener('dragover',allowDrop);
+                        
+                           //document.getElementById(celulaSudOEsteId).removeEventListener('drop', drop);
+                            //document.getElementById(celulaSudOEsteId).removeEventListener('dragover',allowDrop);
+                        
+                           
+                    }
+
+                    if( coluna == 8 && linha > 1 && linha < 8){
+
+                        if( !document.getElementById(celulaNorOesteId).hasChildNodes() ){
+
+                            document.getElementById(celulaNorOesteId).addEventListener('drop', drop);
+                            document.getElementById(celulaNorOesteId).addEventListener('dragover',allowDrop);
+                            paintPossibleMovesCells(celulaNorOesteId);
+
+                        }else{
+
+                            document.getElementById(celulaNorOesteId).removeEventListener('drop', drop);
+                            document.getElementById(celulaNorOesteId).removeEventListener('dragover',allowDrop);
+                        }    
+                       
+                        document.getElementById(celulaSudOEsteId).removeEventListener('drop', drop);
+                        document.getElementById(celulaSudOEsteId).removeEventListener('dragover',allowDrop);
+                    }
+
+                    if( coluna > 1 && coluna < 7 && linha == 8 ){
+
+                        if( !document.getElementById(celulaNordEsteId).hasChildNodes() ){
+
+                            document.getElementById(celulaNordEsteId).addEventListener('drop', drop);
+                            document.getElementById(celulaNordEsteId).addEventListener('dragover',allowDrop);
+                            paintPossibleMovesCells(celulaNordEsteId);
+
+                        }else{
+
+                            document.getElementById(celulaNordEsteId).removeEventListener('drop', drop);
+                            document.getElementById(celulaNordEsteId).removeEventListener('dragover',allowDrop);
+                        } 
+                        
+                        if( !document.getElementById(celulaNorOesteId).hasChildNodes() ){
+
+                            document.getElementById(celulaNorOesteId).addEventListener('drop', drop);
+                            document.getElementById(celulaNorOesteId).addEventListener('dragover',allowDrop);
+                            paintPossibleMovesCells(celulaNorOesteId);
+
+                        }else{
+
+                            document.getElementById(celulaNorOesteId).removeEventListener('drop', drop);
+                            document.getElementById(celulaNorOesteId).removeEventListener('dragover',allowDrop);
+                        }
+                        
+                    }
+
+                    if(  coluna == 1 && linha == 8 ){                   
+                        
+                        if( !document.getElementById(celulaNordEsteId).hasChildNodes() ){
+
+                            document.getElementById(celulaNordEsteId).addEventListener('drop', drop);
+                            document.getElementById(celulaNordEsteId).addEventListener('dragover',allowDrop);
+                            paintPossibleMovesCells(celulaNordEsteId);
+
+                        }else{
+
+                            document.getElementById(celulaNordEsteId).removeEventListener('drop', drop);
+                            document.getElementById(celulaNordEsteId).removeEventListener('dragover',allowDrop);
+                        }
+                                           
+                    }                    
+
+                    if( coluna == 1 && linha > 1 && linha < 8 ){
+
+                        if( !document.getElementById(celulaNordEsteId).hasChildNodes() ){
+
+                            document.getElementById(celulaNordEsteId).addEventListener('drop', drop);
+                            document.getElementById(celulaNordEsteId).addEventListener('dragover',allowDrop);
+                            paintPossibleMovesCells(celulaNordEsteId);
+
+                        }else{
+
+                            document.getElementById(celulaNordEsteId).removeEventListener('drop', drop);
+                            document.getElementById(celulaNordEsteId).removeEventListener('dragover',allowDrop);
+                        }    
+                        
+                        document.getElementById(celulaSudEsteId).removeEventListener('drop', drop);
+                        document.getElementById(celulaSudEsteId).removeEventListener('dragover',allowDrop);
+                    } 
+
+                    //regra come peça
+                    //SUDESTE
+                    if( linha <= 6 && coluna <=6){
+                        let coordCaughtSouthEste = [linha + 2, coluna + 2];
+                        let coordOpponetCellEste = [linha + 1, coluna + 1];
+                        let cellSouthEsteOpponentId = 'cell-' + coordOpponetCellEste[0] + coordOpponetCellEste[1];               
+                        let cellCaughtSouthEsteId = 'cell-' + coordCaughtSouthEste[0] + coordCaughtSouthEste[1];
+                        let cellCaughtSouthEste = document.getElementById(cellCaughtSouthEsteId);
+                        let cellOpponentSouthEste = document.getElementById(cellSouthEsteOpponentId);
+                        let pieceOpponentClassName = cellOpponentSouthEste.hasChildNodes() ? cellOpponentSouthEste.firstChild.className : undefined;
+                        
+                        if(cellCaughtSouthEste != null && !cellCaughtSouthEste.hasChildNodes() && cellOpponentSouthEste.hasChildNodes() && pieceOpponentClassName == 'peca-escura'){//celula existe e está vazia
+                            cellCaughtSouthEste.addEventListener('drop', drop);
+                            cellCaughtSouthEste.addEventListener('drop', function(){
+                                cellOpponentSouthEste.removeChild(cellOpponentSouthEste.firstChild);
+                                const node = document.createElement('video');
+                                const nodeSource = document.createElement('source');
+                                nodeSource.src = 'video.mp4';
+                                nodeSource.type = 'video/mp4';
+                                node.width = '80';
+                                node.height = '80';
+                                node.autoplay = true;
+                                node.muted = true;
+                                node.appendChild(nodeSource);
+                                cellOpponentSouthEste.appendChild(node);
+                                setTimeout(function(){
+                                    cellOpponentSouthEste.removeChild(cellOpponentSouthEste.firstChild);
+                                },1500)
+                                
+                            });
+                            cellCaughtSouthEste.addEventListener('dragover',allowDrop);
+                            paintPossibleMovesCells(cellCaughtSouthEsteId);
+                        } 
+                    }                    
+
+                    //SUDOESTE
+                    if( linha <= 6 && coluna > 2){
+                        let coordCaughtSouthWEste = [linha + 2, coluna - 2];
+                        let coordOpponetCellWest = [linha + 1, coluna - 1];
+                        let cellSouthWEsteOpponentId = 'cell-' + coordOpponetCellWest[0] + coordOpponetCellWest[1];               
+                        let cellCaughtSouthWesteId = 'cell-' + coordCaughtSouthWEste[0] + coordCaughtSouthWEste[1];
+                        let cellCaughtSouthWeste = document.getElementById(cellCaughtSouthWesteId);
+                        let cellOpponentSouthWeste = document.getElementById(cellSouthWEsteOpponentId);
+                        let pieceOpponentWestClassName = cellOpponentSouthWeste.hasChildNodes() ?cellOpponentSouthWeste.firstChild.className : undefined;
+                        
+                        if(cellCaughtSouthWeste != null && !cellCaughtSouthWeste.hasChildNodes() && cellOpponentSouthWeste.hasChildNodes() && pieceOpponentWestClassName == 'peca-escura'){//celula existe e está vazia
+                            cellCaughtSouthWeste.addEventListener('drop', drop);
+                            cellCaughtSouthWeste.addEventListener('drop', function(){
+                                    cellOpponentSouthWeste.removeChild(cellOpponentSouthWeste.firstChild);                               
+
+                                    const node = document.createElement('video');
+                                    const nodeSource = document.createElement('source');
+                                    nodeSource.src = 'video.mp4';
+                                    nodeSource.type = 'video/mp4';
+                                    node.width = '80';
+                                    node.height = '80';
+                                    node.autoplay = true;
+                                    node.muted = true;
+                                    node.appendChild(nodeSource);
+                                    cellOpponentSouthWeste.appendChild(node);
+                                    setTimeout(function(){
+                                        cellOpponentSouthWeste.removeChild(cellOpponentSouthWeste.firstChild);
+                                    },1500)
+                                    
+                                });
+                            cellCaughtSouthWeste.addEventListener('dragover',allowDrop);
+                            paintPossibleMovesCells(cellCaughtSouthWesteId);
+                        } 
+                    }
+                    
+
+                    //NORDESTE
+                    if( linha > 2 && coluna <= 6){
+                        let coordCaughtNorthEste = [linha - 2, coluna + 2];
+                        let coordOpponetCellNorthEste = [linha - 1, coluna + 1];
+                        let cellNorthEsteOpponentId = 'cell-' + coordOpponetCellNorthEste[0] + coordOpponetCellNorthEste[1];               
+                        let cellCaughtNorthesteId = 'cell-' + coordCaughtNorthEste[0] + coordCaughtNorthEste[1];
+                        let cellCaughtNorthEste = document.getElementById(cellCaughtNorthesteId);
+                        let cellOpponentNorthEste = document.getElementById(cellNorthEsteOpponentId);
+                        let pieceOpponentNorthEsteClassName = cellOpponentNorthEste.hasChildNodes() ?cellOpponentNorthEste.firstChild.className : undefined;
+                        
+                        if(cellCaughtNorthEste != null && !cellCaughtNorthEste.hasChildNodes() && cellOpponentNorthEste.hasChildNodes() && pieceOpponentNorthEsteClassName == 'peca-escura'){//celula existe e está vazia
+                            cellCaughtNorthEste.addEventListener('drop', drop);
+                            cellCaughtNorthEste.addEventListener('drop', function(){
+                                    cellOpponentNorthEste.removeChild(cellOpponentNorthEste.firstChild);
+                                    const node = document.createElement('video');
+                                    const nodeSource = document.createElement('source');
+                                    nodeSource.src = 'video.mp4';
+                                    nodeSource.type = 'video/mp4';
+                                    node.width = '80';
+                                    node.height = '80';
+                                    node.autoplay = true;
+                                    node.muted = true;
+                                    node.appendChild(nodeSource);
+                                    cellOpponentNorthEste.appendChild(node);
+                                    setTimeout(function(){
+                                        cellOpponentNorthEste.removeChild(cellOpponentNorthEste.firstChild);
+                                    },1500)                         
+                                });
+                            cellCaughtNorthEste.addEventListener('dragover',allowDrop);
+                            paintPossibleMovesCells(cellCaughtNorthesteId);
+                        } 
+                    }
+                    
+
+                    //NOROESTE
+                    if( linha > 2 && coluna > 2){
+                        let coordCaughtNorthWeste = [linha - 2, coluna - 2];
+                        let coordOpponetCellNorthWeste = [linha - 1, coluna - 1];
+                        let cellNorthWesteOpponentId = 'cell-' + coordOpponetCellNorthWeste[0] + coordOpponetCellNorthWeste[1];               
+                        let cellCaughtNorthWesteId = 'cell-' + coordCaughtNorthWeste[0] + coordCaughtNorthWeste[1];
+                        let cellCaughtNorthWeste = document.getElementById(cellCaughtNorthWesteId);
+                        let cellOpponentNorthWeste = document.getElementById(cellNorthWesteOpponentId);
+                        let pieceOpponentNorthWesteClassName = cellOpponentNorthWeste.hasChildNodes() ?cellOpponentNorthWeste.firstChild.className : undefined;
+                        
+                        if(cellCaughtNorthWeste != null && !cellCaughtNorthWeste.hasChildNodes() && cellOpponentNorthWeste.hasChildNodes() && pieceOpponentNorthWesteClassName == 'peca-escura'){//celula existe e está vazia
+                            cellCaughtNorthWeste.addEventListener('drop', drop);
+                            cellCaughtNorthWeste.addEventListener('drop', function(){
+                                    cellOpponentNorthWeste.removeChild(cellOpponentNorthWeste.firstChild);const node = document.createElement('video');
+                                    const nodeSource = document.createElement('source');
+                                    nodeSource.src = 'video.mp4';
+                                    nodeSource.type = 'video/mp4';
+                                    node.width = '80';
+                                    node.height = '80';
+                                    node.autoplay = true;
+                                    node.muted = true;
+                                    node.appendChild(nodeSource);
+                                    cellOpponentNorthWeste.appendChild(node);
+                                    setTimeout(function(){
+                                        cellOpponentNorthWeste.removeChild(cellOpponentNorthWeste.firstChild);
+                                    },1500)                         
+                                });
+                            cellCaughtNorthWeste.addEventListener('dragover',allowDrop);
+                            paintPossibleMovesCells(cellCaughtNorthWesteId);
+                        }       
+                    }
+                                     
+                        
+                }//FIM PEÇA CLARA               
+
+            }//FIM FUNCTION DRAG
+
+           function drop(ev){
+           
+                ev.preventDefault();
+                var data = ev.dataTransfer.getData("text");
+                ev.target.appendChild(document.getElementById(data));
+                var blackCells = document.getElementsByClassName('black-cell');
+                
+
+                for(let i = 0; i < blackCells.length; i++){
+
+                    blackCells[i].style.backgroundColor = "black";
+                    blackCells[i].removeEventListener('drop', drop);
+                    blackCells[i].removeEventListener('dragover',allowDrop);
+                }
+           }
+
+           function paintPossibleMovesCells(id){
+
+               document.getElementById(id).style.backgroundColor = "#21d19f";
+           }
+           
+           function paintDefaultColorCells(ev){
+                var blackCells = document.getElementsByClassName('black-cell');
+                    for(let i = 0; i < blackCells.length; i++){
+                        blackCells[i].style.backgroundColor = "black";
+          
+                    }
+           }
+
+        </script>
+       
+    </body>
+
+</html>

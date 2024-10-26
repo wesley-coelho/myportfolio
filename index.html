@@ -9,39 +9,51 @@
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Prompt:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
-        <script src="script.js"></script>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+        
     </head>
-    <body>
+    <body id="bg">
 
 
         <div id="container-left">
-            <p class="montserrat-semibold-600 title-name">
-                WESLEY COELHO
+            <!-- Meu nome -->
+            <p class="futura title-name">
+                Wesley Coelho
             </p>
-            <p class="montserrat-medium-500 subtitle-occupation" >
-                Desenvolvedor Java
+             <!-- Objetivo -->
+            <p class="futura-Book subtitle-occupation" >
+                Programador
             </p>
-            <p class="montserrat-regular-400 subtitle-abstract">
-                
-               Desenvolvo aplicações para pequenos negócios e busco
-               emprego fixo como programador.
-
+            <!-- Breve resumo -->
+            <p class="futura-Book subtitle-abstract">                
+               Tenho experiência em Java, <br> banco de dados 
+               relacional e NoSQL, <br> aplicados em pequenos negócios.
             </p>
-
-            <div id="eu" class="container-topics" style="margin-top: 100px" onmouseover="animaTopicOver(this)" onmouseleave="animaTopicLeave(this)">
+            
+            <!-- Navegacao topico Sobre-->
+            <nav  class="container-topics" style="margin-top: 50px" onmouseover="animaTopicOver(this)" onmouseleave="animaTopicLeave(this)">
                 <div class="topic-line" ></div>
                 <p class="topic montserrat-medium-500" style="opacity: 1">SOBRE</p>
-            </div>
-
-            <div class="container-topics" onmouseover="animaTopicOver(this)" onmouseleave="animaTopicLeave(this)">
+            </nav>
+            <!-- Navegacao topico Experiências-->
+            <nav class="container-topics" onmouseover="animaTopicOver(this)" onmouseleave="animaTopicLeave(this)">
                 <div class="topic-line"></div>
                 <p class="topic montserrat-medium-500">EXPERIÊNCIAS</p>
-            </div>
-
-            <div class="container-topics" onmouseover="animaTopicOver(this)" onmouseleave="animaTopicLeave(this)">
+            </nav>
+             <!-- Navegacao topico Projetos-->
+            <nav class="container-topics" onmouseover="animaTopicOver(this)" onmouseleave="animaTopicLeave(this)">
                 <div class="topic-line"></div>
                 <p class="topic montserrat-medium-500">PROJETOS</p>
-            </div>
+            </nav>
+             <!-- Navegacao Redes sociais-->
+            <nav style=" margin-top: 180px">
+                <a href="https://github.com/wesley-coelho"><i class="fa fa-github icons-social-media" style="font-size: 25px;"></i></a>
+                <a href="#"><i class="fa fa-linkedin-square icons-social-media" style="font-size: 25px;"></i></a>
+                <a href="#"><i class="fa fa-instagram icons-social-media" style="font-size: 25px;"></i></a>
+                <a href="#"><i class="fa fa-whatsapp icons-social-media" style="font-size: 25px;"></i></a>
+            </nav>
 
         </div>
 
@@ -49,322 +61,141 @@
 
         <div id="container-right"> 
 
-
-            <p class="montserrat-regular-400">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-                Suspendisse at nulla auctor leo vestibulum maximus. 
-                Sed ullamcorper eu nisi quis tincidunt. Etiam iaculis 
-                neque ut enim sodales tincidunt.
+            <p class="Futura Book sobre">
+                Sou bacharel em engenharia elétrica com ênfase em eletrônica, 
+                estudante de Ciência de Dados e autodidata em linguagens
+                de programação como <span class="text-bold">C, C++, C#, Java, Javascript, Dart e Python.</span>
+                Durante o curso de engenharia elétrica que percebi que o que mais gostava era codificar. 
+                Na faculdade tive contato com a linguagem<span class="text-bold"> Assembly e C</span>. Fiz meu TCC, 
+                um projeto de estufa controlada por microcontroladores PIC, utilizando Assembly,
+                Nessa época lidei por 1 ano com <span class="text-bold">programação e depuração de erros</span>
+                em Assembly.
             </p>
 
-            <p class="montserrat-regular-400">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-                Suspendisse at nulla auctor leo vestibulum maximus. 
-                Sed ullamcorper eu nisi quis tincidunt. Etiam iaculis 
-                neque ut enim sodales tincidunt.
+            <p  class="Futura Book sobre">
+                Cheguei a cursar 2 anos de Análise e Desenvolvimento de Sistemas
+                na Fatec de Ribeirão Preto, onde tive acesso a disciplinas de <span class="text-bold">modelagem
+                de banco de dados relacional, SQL, programação para dispositivos móveis
+                e algoritmos</span>. Na Fatec trabalhei com o framework <span class="text-bold">Flutter, linguagem Dart,
+                utilizei prototipagem de software e engenharia de requisitos</span> para construir
+                um aplicativo Android para venda de produtos. E também tive contato,
+                pela primeira vez, com <span class="text-bold">orientação a objetos</span>, em <span class="text-bold"></span>C#</span>.
             </p>
 
-            <p class="montserrat-regular-400">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-                Suspendisse at nulla auctor leo vestibulum maximus. 
-                Sed ullamcorper eu nisi quis tincidunt.
+            <p  class="Futura Book sobre">
+                Profissionalmente, desde 2007, tenho trabalhado para uma empresa
+                de radiodifusão com conteúdo audiovisual, onde, sempre que possível,
+                utilizo <span class="text-bold">Javascript</span> para automatizar tarefas do dia a dia
+                criando scripts para ler dados de documentos de texto e planilhas, manipular
+                arquivos na rede e consumir api externa.
+                
+            </p>
+            <p class="Futura Book sobre">
+                Paralelamente, ao meu emprego formal, trabalho como programador autônomo,
+                fazendo websites para amigos e clientes, soluções desktop e mobile.
+                No meu tempo livre, estudo programação, aplicando em jogos, ou ferramentas
+                para uso próprio.
             </p>
 
-            <div style="margin-top: 100px;" class="container-card">
-                
-                
-                <div class="column-date-experience">
-                    <div style="clear: both;" class="row-date-experience">
-                        <p>2023 - 2024</p>
-                    </div>
-                    
-                </div> 
-                
-                
-                <div class="column-info-experience">                    
-                    <div>
-                        <h1 class="title-info-experience montserrat-semibold-600">Sistema de gerenciamento de financiamento de veículos</h1>
-                        <p class="info-experience ">
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-                            Suspendisse at nulla auctor leo vestibulum maximus. 
-                            Sed ullamcorper eu nisi quis tincidunt. Etiam iaculis 
-                            neque ut enim sodales tincidunt.
-                        </p>
-                        <div>
-                        <div class="tag-skill">Java</div>
-                        <div class="tag-skill">MongoDB</div>
-                        <div class="tag-skill">PostgreSQL</div>
-                        <div class="tag-skill">Git</div>
-                        <div class="tag-skill">GitHub</div>
-                        </div>
-                    </div>
-                    
-                </div>    
-                <div style="clear: both;"></div> 
-                
-                
+            <p class="Futura Book sobre">
+                Agora, estou buscando uma transição de carreira. Por isso, ingressei no curso
+                de <span class="text-bold">Ciência de Dados</span> na Univesp EAD onde estou aprendendo 
+                a programar também em <span class="text-bold">Python</span>, aprofundando meus conhecimentos em <span class="text-bold">estruturas
+                de dados</span> usando <span class="text-bold">C++</span> e ampliando meus conhecimentos em <span class="text-bold">estatística</span>.
+            </p>
+
+            <p class="Futura Book sobre">
+                Considero-me uma pessoa resiliente, comprometida, bem educada e de fácil relacionamento.
+                Cada aplicação que desenvolvo, por mais simples que seja, sinto-me muito realizado.
+            </p>
+            <!-- dropdown Seção Experiências-->
+            <div class="dropdown-section" onclick="hideExpandSectionExperience()">
+                <h6 >EXPERIÊNCIAS</h6>
+                <i id="ExperienceArrowDown" class="material-icons" style="display: inline-block;font-size: 12px">keyboard_arrow_down</i>
+                <i id="ExperienceArrowUp" class="material-icons" style="display: none;font-size: 12px">keyboard_arrow_up</i>
             </div>
-
-            <div class="container-card">
-                
-                
-                <div class="column-date-experience">
-                    <div style="clear: both;" class="row-date-experience">
-                        <p>2020 - 2020</p>
-                    </div>
-                    
-                </div> 
-                
-                
-                <div class="column-info-experience">                    
-                    <div>
-                        <h1 class="title-info-experience montserrat-semibold-600">Cadastro de contratos de financiamento de veículos</h1>
-                        <p class="info-experience ">
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-                            Suspendisse at nulla auctor leo vestibulum maximus. 
-                            Sed ullamcorper eu nisi quis tincidunt. Etiam iaculis 
-                            neque ut enim sodales tincidunt.
-                        </p>
-                        <div>
-                        <div class="tag-skill">VBA</div>
-                        <div class="tag-skill">Excel</div>
-                        </div>
-                    </div>
-                    
-                </div>    
-                <div style="clear: both;"></div> 
-                
-                
-            </div>
-
-            <div class="container-card">
-                
-                
-                <div class="column-date-experience">
-                    <div style="clear: both;" class="row-date-experience">
-                        <p>2014 - PRESENT</p>
-                    </div>
-                    
-                </div> 
-                
-                
-                <div class="column-info-experience">                    
-                    <div>
-                        <h1 class="title-info-experience montserrat-semibold-600">Diretor de imagens (DTV)</h1>
-                        <p class="info-experience ">
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-                            Suspendisse at nulla auctor leo vestibulum maximus. 
-                            Sed ullamcorper eu nisi quis tincidunt. Etiam iaculis 
-                            neque ut enim sodales tincidunt.
-                        </p>
-                        <div>
-                            <div class="tag-skill">Javascript</div>
-                            <div class="tag-skill">Photoshop</div>
-                            <div class="tag-skill">After Effects</div>
-                            <div class="tag-skill">Premiere Pro</div>
-                            <div class="tag-skill">Edius</div>
-                        </div>
-                    </div>
-                    
-                </div>    
-                <div style="clear: both;"></div> 
-                
-                
-            </div>
-
-            <div class="container-card">
-                
-                
-                <div class="column-date-experience">
-                    <div style="clear: both;" class="row-date-experience">
-                        <p>2011 - 2014</p>
-                    </div>
-                    
-                </div> 
-                
-                
-                <div class="column-info-experience">                    
-                    <div>
-                        <h1 class="title-info-experience montserrat-semibold-600">Operador de vídeo e máquina de caracteres</h1>
-                        <p class="info-experience ">
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-                            Suspendisse at nulla auctor leo vestibulum maximus. 
-                            Sed ullamcorper eu nisi quis tincidunt. Etiam iaculis 
-                            neque ut enim sodales tincidunt.
-                        </p>
-                        <div>
-                            <div class="tag-skill">Chyron Lyric</div>
-                        </div>
-                    </div>
-                    
-                </div>    
-                <div style="clear: both;"></div> 
-                
-                
-            </div>
-
-            <div class="container-card">
-                
-                
-                <div class="column-date-experience">
-                    <div style="clear: both;" class="row-date-experience">
-                        <p>2007 - 2011</p>
-                    </div>
-                    
-                </div> 
-                
-                
-                <div class="column-info-experience">                    
-                    <div>
-                        <h1 class="title-info-experience montserrat-semibold-600">Operador de canal de televisão</h1>
-                        <p class="info-experience ">
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-                            Suspendisse at nulla auctor leo vestibulum maximus. 
-                            Sed ullamcorper eu nisi quis tincidunt. Etiam iaculis 
-                            neque ut enim sodales tincidunt.
-                        </p>
-                        <div>
-                            <div class="tag-skill">Proteus</div>
-                            <div class="tag-skill">Microsoft Visio</div>
-                        </div>
-                    </div>
-                    
-                </div>    
-                <div style="clear: both;"></div> 
-
-                
-                
-                
-            </div>
-
-            <div class="container-card">
-                
-                
-                <div class="column-date-experience">
-                    <div style="clear: both;" class="row-date-experience">
-                        <p>2007 - 2007</p>
-                    </div>
-                    
-                </div> 
-                
-                
-                <div class="column-info-experience">                    
-                    <div>
-                        <h1 class="title-info-experience montserrat-semibold-600">Estágio de nível técnico em telecomunicações</h1>
-                        <p class="info-experience ">
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-                            Suspendisse at nulla auctor leo vestibulum maximus. 
-                            Sed ullamcorper eu nisi quis tincidunt. Etiam iaculis 
-                            neque ut enim sodales tincidunt.
-                        </p>
-                        <div>
-                            <div class="tag-skill">Proteus</div>
-                        </div>
-                    </div>
-                    
-                </div>    
-                <div style="clear: both;"></div> 
-
-                
-                
-                
-            </div>
-
-            <div class="container-card">
-                
-                
-                <div class="column-date-experience">
-                    <div style="clear: both;" class="row-date-experience">
-                        <p>2006 - 2006</p>
-                    </div>
-                    
-                </div> 
-                
-                
-                <div class="column-info-experience">                    
-                    <div>
-                        <h1 class="title-info-experience montserrat-semibold-600">Estágio de nível técnico em telecomnicações</h1>
-                        <p class="info-experience ">
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-                            Suspendisse at nulla auctor leo vestibulum maximus. 
-                            Sed ullamcorper eu nisi quis tincidunt. Etiam iaculis 
-                            neque ut enim sodales tincidunt.
-                        </p>
-                        <div>
-                            <div class="tag-skill">Proteus</div>
-                        </div>
-                    </div>
-                    
-                </div>    
-                <div style="clear: both;"></div>                
-                
-            </div>
-
-            <div class="container-card">
-                
-                
-                <div class="column-date-experience">
-                    <div style="clear: both;" class="row-date-experience">
-                        <p>2004 - 2005</p>
-                    </div>
-                    
-                </div> 
-                
-                
-                <div class="column-info-experience">                    
-                    <div>
-                        <h1 class="title-info-experience montserrat-semibold-600">Auxiliar de escritório</h1>
-                        <p class="info-experience ">
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-                            Suspendisse at nulla auctor leo vestibulum maximus. 
-                            Sed ullamcorper eu nisi quis tincidunt. Etiam iaculis 
-                            neque ut enim sodales tincidunt.
-                        </p>
-                        <div>
-                            <div class="tag-skill">Excel</div>
-                        </div>
-                    </div>
-                    
-                </div>    
-                <div style="clear: both;"></div> 
-                
-            </div>
-
-            <div class="container-card">
-                
-                
-                <div class="column-date-experience">
-                    <div style="clear: both;" class="row-date-experience">
-                        <p>2002 - 2004</p>
-                    </div>
-                    
-                </div> 
-                
-                
-                <div class="column-info-experience">                    
-                    <div>
-                        <h1 class="title-info-experience montserrat-semibold-600">Menor aprendiz</h1>
-                        <p class="info-experience ">
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-                            Suspendisse at nulla auctor leo vestibulum maximus. 
-                            Sed ullamcorper eu nisi quis tincidunt. Etiam iaculis 
-                            neque ut enim sodales tincidunt.
-                        </p>
-                        <div>
-                            <div class="tag-skill">Excel</div>
-                        </div>
-                    </div>
-                    
-                </div>    
-                <div style="clear: both;"></div> 
-
-                
-                
-                
-            </div>
-
+            <!-- Fim dropdown Seção Experiências-->
+            <section id="section-experience">
             
+                <div  class="container-card">
+                    
+                    
+                    <div class="column-date-experience">
+                        <div style="clear: both;" class="row-date-experience">
+                            <p>2023 - 2024</p>
+                        </div>
+                        
+                    </div> 
+                    
+                    
+                    <div class="column-info-experience">                    
+                        <div>
+                            <h1 class="title-info-experience futura">Sistema de gerenciamento de financiamento de veículos</h1>
+                            <p class="enterprise-experience">7 CURVAS VEÍCULOS</p>
+                            <i class="fa fa-arrow-circle-right"></i>
+                            <p class="info-experience ">
+                                O programa persiste os dados das entradas
+                                e saídas dos veículos e permite o controle de pagamento 
+                                das parcelas dos financiamentos.
+                                
+                            </p>
+                            <div>
+                            <div class="tag-skill">Java</div>
+                            <div class="tag-skill">MongoDB</div>
+                            <div class="tag-skill">PostgreSQL</div>
+                            <div class="tag-skill">Git</div>
+                            <div class="tag-skill">GitHub</div>
+                            </div>
+                        </div>
+                        
+                    </div>    
+                    <div style="clear: both;"></div> 
+                    
+                    
+                </div>
 
+
+                <div class="container-card">
+                    
+                    
+                    <div class="column-date-experience">
+                        <div style="clear: both;" class="row-date-experience">
+                            <p>2020 - 2020</p>
+                        </div>
+                        
+                    </div> 
+                    
+                    
+                    <div class="column-info-experience">                    
+                        <div>
+                            <h1 class="title-info-experience futura">Cadastro de contratos de financiamento de veículos</h1>
+                            <p class="enterprise-experience">7 CURVAS VEÍCULOS</p>
+                            <i class="fa fa-arrow-circle-right"></i>
+                            <p class="info-experience">
+                                Formulários em VBA para facilitar o controle dos contratos
+                                dos clientes. 
+                                Com ferramentas de busca e impressão de relatórios 
+                    
+                            </p>
+                            <div>
+                            <div class="tag-skill">VBA</div>
+                            <div class="tag-skill">Excel</div>
+                            </div>
+                        </div>
+                        
+                    </div>    
+                    <div style="clear: both;"></div>                
+                    
+                </div>
+            </section>
+            
+            <div class="dropdown-section" onclick="hideExpandSectionProjects()" style="margin-top: 10px;">
+                <h6>PROJETOS</h6>
+                <i id="ProjectsArrowDown" class="material-icons" style="display: inline-block;font-size: 12px">keyboard_arrow_down</i>
+                <i id="ProjectsArrowUp" class="material-icons" style="display: none;font-size: 12px">keyboard_arrow_up</i>
+           
+            </div>
         </div>
+        <script src="script.js"></script>
     </body>
 </html>

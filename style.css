@@ -1,3 +1,14 @@
+
+@font-face {
+    font-family: 'Futura' ;
+    src: url('fonts\\futura.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Futura Book' ;
+    src: url('fonts\\Futura Book font.ttf') format('truetype');
+}
+
 *{
     margin: 0;
     padding: 0;
@@ -13,18 +24,19 @@
 }
 
 body{
-    margin: 0 auto;
+
+    margin: 0 50px;
     background-color: #0F172A;
+
 }
 p{
-    margin: 0 0 20px 0;
+    margin: 0 0 10px 0;
 }
 
 
 #container-left{
     margin-top: 100px;
     padding-left: 10%;
-    padding-right: 5%;
     width: 50%;
     float: left;
     position: fixed;
@@ -33,35 +45,39 @@ p{
 
 #container-right{
     margin-top: 100px;
+    padding-left: 5%;
     padding-right: 5%;
     width: 50%;
     float: right; 
 }
 .title-name{
-    font-size: 38px;
-    margin: 0 0 20px 0;
+    font-size: 48px;
+    margin: 0 0 10px 0;
     padding: 0;
     
 }
 
 .subtitle-occupation{
-    font-size: 20px;
+    font-size: 24px;
     color: #f7f7ff;
-    margin: 0 0 20px 0;
+    margin: 0 0 15px 0;
     padding: 0;
     
 }
 
 .subtitle-abstract{
-    font-size: 16px;
-    color: #dbf5ff;
+    font-size: 18px;
+    line-height: 20px;
+    color:  #8D9CB1;
     margin: 0 0 20px 0;
     padding: 0;
+   
   
 }
 
 .container-topics{
-    margin-bottom: 10px;
+    margin-bottom: 2px;
+
 }
 
 
@@ -69,18 +85,20 @@ p{
 .topic-line{
     width: 30px;
     height: 100%; 
-    margin-bottom: 4px;;
+    margin-bottom: 4px;
     border-bottom: 1px solid gray;
     padding: 10px;
     display: inline-block;
     transition: width 0.3s;
+   
 }
 
 
 .topic{
     display: inline-block;
-    font-size: 14px;
+    font-size: 12px;
     opacity: 0.5;
+    
     
 }
 
@@ -94,9 +112,23 @@ p{
 }
 
 .container-card:hover{
-    background-color: rgba(180, 220, 220, 0.05);
+    background-color: rgba(255, 255, 255, 0.05);
+    /*box-shadow: 0 4px 8px 0 rgba(200, 204, 249, 0.2), 0 6px 20px 0 rgba(200, 204, 249, 0.19);*/
     cursor: pointer;
 }
+
+#section-experience{
+    overflow: hidden;
+    max-height: 100em;
+    transition: max-height 0.5s ease;
+}
+
+#section-experience.hide{
+    max-height: 0;
+}
+
+
+
 .column-date-experience{
     font-size: 12px;
     float: left;
@@ -124,25 +156,95 @@ p{
     color: #FFF;
 }
 
+.enterprise-experience{
+    font-family: "Futura", sans-serif;
+    font-style: bold;
+    font-size: 12px;
+    padding: 5px 5px 0 0;
+    color:#8F9EB3;
+    display: inline-block;
+
+
+}
+
 .info-experience {
-    padding-top:10px;
+    padding-top: 5px;
     font-size: 14px;
+    line-height: 20px;
+    color:#8F9EB3;
+
     
 }
 .tag-skill{
     font-family: "Montserrat", sans-serif;
     font-optical-sizing: auto;
-    font-weight: 600;
+    font-weight: 500;
     font-style: bold;
-    font-size: 16px;
+    font-size: 10px;
     display: inline-block;
     padding: 5px 10px;
-    margin: 5px;
-    border: 1px solid #c0f2ff;
-    border-radius: 5px;
+    color: rgba(0, 255, 213, 1);
+    background-color: rgba(0, 255, 213, 0.1);
+    margin: 5px;   
+    border-radius: 25px;
 }
 
+.icons-social-media{
+    padding: 10px;
+    opacity: 0.5;   
+    transition: transform 0.5s;
+
+}
+
+.icons-social-media:hover{
+    opacity: 1;
+    cursor: pointer;
+    transform: scale(1.5);
+}
+
+.text-bold{
+    font-weight: bold;
+    opacity: 0.8;
+
+}
+
+.sobre{
+    font-size: 16px;
+    line-height: 26px;
+    color:#8F9EB3;
+   
+}
+.dropdown-section{
+    margin-top: 100px;
+    margin-bottom: 30px;
+    
+}
+
+.dropdown-section h6,i{
+    color: rgba(255, 255, 255, 0.3);
+    display: inline-block;
+}
+
+.dropdown-section:hover h6,i{
+    cursor: pointer;
+    color: rgba(255, 255, 255, 1.0);
+}
+
+
+
 /*fonts*/
+
+
+
+.futura{
+    font-family: 'Futura', sans-serif;
+    font-weight: bold;
+}
+
+.futura-Book{
+    font-family: 'Futura Book', sans-serif;
+    font-weight: normal;
+}
 .montserrat-semibold-600 {
     font-family: "Montserrat", sans-serif;
     font-optical-sizing: auto;
@@ -163,3 +265,15 @@ p{
     font-weight: 400;
     font-style: normal; 
   }
+
+  .montserrat-light-200{
+    font-family: "Montserrat", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 200;
+    font-style: light;  
+    color: #b3b8cd;
+    line-height: 16px;
+
+  }
+
+

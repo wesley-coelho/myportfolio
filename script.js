@@ -25,3 +25,29 @@ function animaTopicLeave(obj){
         }
     }
  }
+
+ 
+
+ function hideExpandSectionExperience(){
+    var element = document.getElementById("section-experience");
+    if( element.classList.length == 0 ){
+        element.classList.add("hide");
+        $("#ExperienceArrowDown").css("display", "inline-block"); 
+        $("#ExperienceArrowUp").css("display", "none"); 
+    }else{
+        element.classList.remove("hide"); 
+        $("#ExperienceArrowDown").css("display", "none"); 
+        $("#ExperienceArrowUp").css("display", "inline-block");
+    }
+ }
+
+ 
+ function mouse(evt){
+    let bg = document.getElementById("bg");
+    bg.style.backgroundImage = "radial-gradient(circle 700px  at " + evt.pageX+"px " + evt.pageY+"px, #11244d,#0F172A,#0F172A)";
+
+ }
+
+ var bg = document.getElementById("bg");
+ bg.addEventListener('mousemove', mouse);
+

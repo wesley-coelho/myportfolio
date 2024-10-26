@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+        <meta charset="UTF-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+        <title>Damas</title>
+        <link rel="stylesheet" href="estilo.css">
+        <script src="Piece_class.js"></script>
+        <script src="Dama_class.js"></script>
+        <script src="Game_class.js"></script>
+        <script src="Position_class.js"></script>
+        <script src="Board_class.js"></script>
+        <script src="gameControl.js"></script>
+        <script src="Timer_class.js"></script>
+  
+    </head>
+    <body>
+        <div class="header" >
+            <div class="container-title"><h1 class="title" id="txt-head">CHECKERS</h1></div>
+            <div class="container-timer"><h4 id="timer">0:00</h4></div>
+            
+        </div>
+        <div id="container-tabuleiro">
+            <div class="container-pecas"></div>
+                <div id="tabuleiro">
+                    <div class="white-cell"></div>
+                    <div id="cell-12" class="black-cell"></div>
+                    <div class="white-cell"></div>
+                    <div id="cell-14" class="black-cell"></div>
+                    <div class="white-cell"></div>
+                    <div id="cell-16" class="black-cell"></div>
+                    <div class="white-cell"></div>
+                    <div id="cell-18" class="black-cell"></div>
+
+                    <div id="cell-21" class="black-cell"></div>
+                    <div class="white-cell"></div>
+                    <div id="cell-23" class="black-cell"></div>
+                    <div class="white-cell"></div>
+                    <div id="cell-25" class="black-cell"></div>
+                    <div class="white-cell"></div>
+                    <div id="cell-27" class="black-cell"></div>
+                    <div class="white-cell"></div>
+
+                    <div class="white-cell"></div>
+                    <div id="cell-32"  class="black-cell"></div>
+                    <div class="white-cell"></div>
+                    <div id="cell-34" class="black-cell"></div>
+                    <div class="white-cell"></div>
+                    <div id="cell-36" class="black-cell"></div>
+                    <div class="white-cell"></div>
+                    <div id="cell-38" class="black-cell"></div>
+
+                    <div id="cell-41" class="black-cell"></div>
+                    <div class="white-cell"></div>
+                    <div id="cell-43" class="black-cell"></div>
+                    <div class="white-cell"></div>
+                    <div id="cell-45" class="black-cell"></div>
+                    <div class="white-cell"></div>
+                    <div id="cell-47" class="black-cell"></div>
+                    <div class="white-cell"></div>
+
+                    <div class="white-cell"></div>
+                    <div id="cell-52" class="black-cell"></div>
+                    <div class="white-cell"></div>
+                    <div id="cell-54" class="black-cell"></div>
+                    <div class="white-cell"></div>
+                    <div id="cell-56" class="black-cell"></div>
+                    <div class="white-cell"></div>
+                    <div id="cell-58" class="black-cell"></div>
+
+                    <div id="cell-61" class="black-cell"></div>
+                    <div class="white-cell"></div>
+                    <div id="cell-63" class="black-cell"></div>
+                    <div class="white-cell"></div>
+                    <div id="cell-65" class="black-cell"></div>
+                    <div class="white-cell"></div>
+                    <div id="cell-67" class="black-cell"></div>            
+                    <div class="white-cell"></div>
+
+                    <div class="white-cell"></div>
+                    <div id="cell-72" class="black-cell"></div>
+                    <div class="white-cell"></div>
+                    <div id="cell-74" class="black-cell"></div>
+                    <div class="white-cell"></div>
+                    <div id="cell-76" class="black-cell"></div>
+                    <div class="white-cell"></div>
+                    <div id="cell-78" class="black-cell"></div>
+                    
+                    <div id="cell-81" class="black-cell"></div>
+                    <div class="white-cell"></div>
+                    <div id="cell-83" class="black-cell"></div>
+                    <div class="white-cell"></div>
+                    <div id="cell-85" class="black-cell"></div>
+                    <div class="white-cell"></div>
+                    <div id="cell-87" class="black-cell"></div>            
+                    <div class="white-cell"></div>   
+                </div>
+            </div>
+            <div id="container-footer">
+                <input type="button" value="START" class="start" onclick="start()">
+                <input type="button" value="PAUSE" class="pause" onclick="">
+                <input type="button" value="RESET" class="reset" onclick="reset()">
+                
+            </div>
+            
+        
+        
+       
+    </body>
+
+</html>

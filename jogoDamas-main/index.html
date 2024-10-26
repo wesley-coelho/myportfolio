@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    
+    <title>Game</title>
+    <style>
+        #canvas1{
+           
+            border: 1px solid #000;
+            display: block;
+            margin: auto;
+        }
+    </style>
+</head>
+<body id="corpo" style="text-align: center">
+    Game
+    <canvas id="canvas1" width="400" height="400"></canvas>
+    <a href="'#">play</a>
+    <a href="'#">restart</a>
+
+    <script>
+        //global variables
+        var c = document.getElementById("canvas1");
+        var ctx = c.getContext("2d");
+        var x =200;
+        var y = 0;
+        var rotPiece = 1; 
+
+        //function drawPiece
+        function drawPiece(rotPiece){
+            switch(rotPiece){
+                case 1: {
+                    ctx.clearRect(0, 0, c.width, c.height);
+                    ctx.beginPath();
+                    ctx.moveTo(x,y);
+                    ctx.lineTo(x+10, y);
+                    ctx.lineTo(x+10, y+30);
+                    ctx.lineTo(x-10, y+30);
+                    ctx.lineTo(x-10, y+20);
+                    ctx.lineTo(x, y+20);
+                    ctx.lineTo(x, y);
+                    ctx.fill();
+
+                }break;
+                case 2:{
+                    ctx.clearRect(0, 0, c.width, c.height);                              
+                    ctx.beginPath();
+                    ctx.moveTo(x,y+10);
+                    ctx.lineTo(x, y+20);
+                    ctx.lineTo(x+30, y+20);
+                    ctx.lineTo(x+30, y+30);
+                    ctx.lineTo(x-10, y+30);
+                    ctx.lineTo(x-10, y+10);
+                    ctx.lineTo(x, y+10);
+                    ctx.fill();
+
+                }break;
+                case 3:{
+                    ctx.clearRect(0, 0, c.width, c.height);                              
+                    ctx.beginPath();
+                    ctx.moveTo(x+10,y);
+                    ctx.lineTo(x+10, y+10);
+                    ctx.lineTo(x, y+10);
+                    ctx.lineTo(x, y+30);
+                    ctx.lineTo(x-10, y+30);
+                    ctx.lineTo(x-10, y);
+                    ctx.lineTo(x+10, y);
+                    ctx.fill();
+
+                }break;
+                case 4: {
+                    ctx.clearRect(0, 0, c.width, c.height);                              
+                    ctx.beginPath();
+                    ctx.moveTo(x+20,y+30);
+                    ctx.lineTo(x+10, y+30);
+                    ctx.lineTo(x+10, y+20);
+                    ctx.lineTo(x-10, y+20);
+                    ctx.lineTo(x-10, y+10);
+                    ctx.lineTo(x+20, y+10);
+                    ctx.lineTo(x+20, y+30);
+                    ctx.fill();
+
+                }
+            }
+        }
+      
+        
+         setInterval(function(){
+            drawPiece(rotPiece);
+            y+=10;
+         }, 1000);      
+                     
+       
+        //keydown Event
+        document.getElementById('corpo')
+        .addEventListener('keydown', function(e){  
+            if(e.key == "ArrowRight" ){
+                ctx.clearRect(0, 0, c.width, c.height);
+                if( x < 390 ) {
+                    x = x+10;
+                }     
+                drawPiece(rotPiece);
+            }else if(e.key == "ArrowLeft" ){
+                ctx.clearRect(0, 0, c.width, c.height);
+                if( x >10 ) {
+                    x = x-10;
+                }
+                drawPiece(rotPiece);
+            }else if(e.key == "ArrowDown" ){
+                rotPiece = ( (rotPiece+1) % 4 ) == 0 ? 4 :(rotPiece+1) % 4;
+                drawPiece(rotPiece);               
+            }            
+        });
+
+
+    </script>
+    
+</body>
+
+</html> 
