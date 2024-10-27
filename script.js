@@ -26,6 +26,34 @@ function animaTopicLeave(obj){
     }
  }
 
+ function arrowMove(obj){
+    let fatherObj = obj.parentNode;
+    for(let i = 0; i < fatherObj.childNodes.length; i++){
+        if( i == 1 ){
+            fatherObj.childNodes[i].style.color = 'rgba(0, 255, 213, 1)';
+         }
+        if( i == 3 ){
+           fatherObj.childNodes[i].style.paddingLeft = '5px';
+        }
+     
+    }
+ }
+
+ function arrowBack(obj){
+    let fatherObj = obj.parentNode;
+    for(let i = 0; i < fatherObj.childNodes.length; i++){
+        if( i == 1 ){
+            fatherObj.childNodes[i].style.color = 'rgba(255, 255, 255, 1)';
+         }
+        if( i == 3 ){
+           fatherObj.childNodes[i].style.paddingLeft = '0px';
+        }
+     
+    }
+ }
+
+
+
  
 
  function hideExpandSectionExperience(){
@@ -38,6 +66,19 @@ function animaTopicLeave(obj){
         element.classList.remove("hide"); 
         $("#ExperienceArrowDown").css("display", "none"); 
         $("#ExperienceArrowUp").css("display", "inline-block");
+    }
+ }
+
+ function hideExpandSectionProjects(){
+    var element = document.getElementById("section-projects");
+    if( element.classList.length == 0 ){
+        element.classList.add("hide");
+        $("#ProjectsArrowDown").css("display", "inline-block"); 
+        $("#ProjectsArrowUp").css("display", "none"); 
+    }else{
+        element.classList.remove("hide"); 
+        $("#ProjectsArrowDown").css("display", "none"); 
+        $("#ProjectsArrowUp").css("display", "inline-block");
     }
  }
 

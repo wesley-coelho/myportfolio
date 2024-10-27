@@ -48,7 +48,7 @@
                 <p class="topic montserrat-medium-500">PROJETOS</p>
             </nav>
              <!-- Navegacao Redes sociais-->
-            <nav style=" margin-top: 180px">
+            <nav class="container-redes-sociais">
                 <a href="https://github.com/wesley-coelho"><i class="fa fa-github icons-social-media" style="font-size: 25px;"></i></a>
                 <a href="#"><i class="fa fa-linkedin-square icons-social-media" style="font-size: 25px;"></i></a>
                 <a href="#"><i class="fa fa-instagram icons-social-media" style="font-size: 25px;"></i></a>
@@ -57,10 +57,10 @@
 
         </div>
 
-
+        
 
         <div id="container-right"> 
-
+            <h1 class="title-topics futura">SOBRE</h1>
             <p class="Futura Book sobre">
                 Sou bacharel em engenharia elétrica com ênfase em eletrônica, 
                 estudante de Ciência de Dados e autodidata em linguagens
@@ -108,6 +108,8 @@
                 Considero-me uma pessoa resiliente, comprometida, bem educada e de fácil relacionamento.
                 Cada aplicação que desenvolvo, por mais simples que seja, sinto-me muito realizado.
             </p>
+
+            <h1 class="title-topics futura">EXPERIÊNCIAS</h1>
             <!-- dropdown Seção Experiências-->
             <div class="dropdown-section" onclick="hideExpandSectionExperience()">
                 <h6 >EXPERIÊNCIAS</h6>
@@ -188,6 +190,8 @@
                     
                 </div>
             </section>
+
+            <h1 class="title-topics futura">PROJETOS</h1>
             
             <div class="dropdown-section" onclick="hideExpandSectionProjects()" style="margin-top: 10px;">
                 <h6>PROJETOS</h6>
@@ -195,6 +199,47 @@
                 <i id="ProjectsArrowUp" class="material-icons" style="display: none;font-size: 12px">keyboard_arrow_up</i>
            
             </div>
+
+            <section id="section-projects">
+                <article class="projects container-card">
+                    <div class="project-img">
+                        <img src="project-damas.png" width="100" class="img-project">
+                    </div>
+                    <div class="project-title-description-skills">
+                        <h2 class="title-project futura" onmouseover="arrowMove(this)" onmouseout="arrowBack(this)">Jogo de Damas</h2>
+                        <i class="fa fa-arrow-circle-right setinha"></i>                       
+                        <p class="info-project" >
+                            Jogo multiplayer utilizando web socket.
+                        </p>
+                        <diV class="tags">
+                            <div class="tag-skill">HTML</div>
+                            <div class="tag-skill">CSS</div>
+                            <div class="tag-skill">Javascript</div>
+                            <div class="tag-skill">JQuery</div>
+                        </diV>
+                    </div>
+                </article>
+
+                <article class="projects container-card">
+                    <div class="project-img">
+                        <img src="project-damas.png" width="100" class="img-project">
+                    </div>
+                    <div class="project-title-description-skills">
+                        <h2 class="title-project futura" onmouseover="arrowMove(this)" onmouseout="arrowBack(this)">Jogo de Damas</h2>
+                        <i class="fa fa-arrow-circle-right setinha" ></i>
+                        <p class="info-project" >
+                            Jogo multiplayer utilizando web socket.
+                        </p>
+                        <div  class="tags">
+                            <div class="tag-skill">HTML</div>
+                            <div class="tag-skill">CSS</div>
+                            <div class="tag-skill">Javascript</div>
+                            <div class="tag-skill">JQuery</div>
+                        </div>
+                        
+                    </div>
+                </article>
+            </section>
         </div>
         <script src="script.js"></script>
     </body>
