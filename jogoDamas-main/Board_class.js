@@ -19,7 +19,7 @@ class Board{
                     if(window.screenX > 600){
                         $(id).append('<img src="preto 02.png" width="50" height="50" class="black"/>');
                     }else{
-                        $(id).append('<img src="preto 02.png" width="20" height="20" class="black"/>');
+                        $(id).append('<img src="preto 02.png" width="35" height="35" class="black"/>');
                     }                   
                     
                     let position = new Position(i,j) ;  
@@ -33,7 +33,7 @@ class Board{
                     if( window.screenX > 600 )   {
                         $(id).append('<img src="preto 02.png" width="50" height="50" class="black"/>');
                     } else{
-                        $(id).append('<img src="preto 02.png" width="20" height="20" class="black"/>');
+                        $(id).append('<img src="preto 02.png" width="35" height="35" class="black"/>');
                     }       
                     
                     let position = new Position(i,j) ;
@@ -50,7 +50,7 @@ class Board{
                     if(window.screenX > 600){
                         $(id).append('<img src="vermelho 02.png" width="50" height="50" class="white"/>');
                     } else{
-                        $(id).append('<img src="vermelho 02.png" width="20" height="20" class="white"/>');
+                        $(id).append('<img src="vermelho 02.png" width="35" height="35" class="white"/>');
                     }                    
                     
                     let position = new Position(i,j) ; 
@@ -63,7 +63,7 @@ class Board{
                     if(window.screenX > 600){
                         $(id).append('<img src="vermelho 02.png" width="50" height="50" class="white"/>');
                     }else{
-                        $(id).append('<img src="vermelho 02.png" width="20" height="20" class="white"/>');
+                        $(id).append('<img src="vermelho 02.png" width="35" height="35" class="white"/>');
                     }
                     
                     let position = new Position(i,j) ; 
