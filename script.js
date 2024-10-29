@@ -92,3 +92,54 @@ function animaTopicLeave(obj){
  var bg = document.getElementById("bg");
  bg.addEventListener('mousemove', mouse);
 
+window.addEventListener('scroll', ()=>{
+    let scrollY = 0;
+    scrollY = parseInt(this.scrollY);
+
+    if( scrollY < 1115 ){
+        $("#topic-sobre").css("width", "50px");
+        $("#sobre").css("opacity", "1");
+
+        $("#topic-experiencias").css("width", "30px");
+        $("#experiencias").css("opacity", "0.5");
+
+        $("#topic-projetos").css("width", "30px");
+        $("#projetos").css("opacity", "0.5");
+
+    }else if( scrollY >= 1115 ){
+        $("#topic-experiencias").css("width", "50px");
+        $("#experiencias").css("opacity", "1");
+
+        $("#topic-sobre").css("width", "30px");
+        $("#sobre").css("opacity", "0.5");
+
+        $("#topic-projetos").css("width", "30px");
+        $("#projetos").css("opacity", "0.5");
+
+    }else{
+        $("#topic-projetos").css("width", "50px");
+        $("#projetos").css("opacity", "1");
+
+        $("#topic-sobre").css("width", "30px");
+        $("#sobre").css("opacity", "0.5");
+
+        $("#topic-experiencias").css("width", "30px");
+        $("#experiencias").css("opacity", "0.5");
+    }
+})
+
+function goTopic(obj){
+    if(obj.id == "1"){
+      window.scrollBy(0,-2000)
+            
+    }
+    else if(obj.id == "2"){
+        window.scrollTo(0,1116)
+    }else if(obj.id == "3"){
+        window.scrollTo(0,0)
+    }
+}
+
+
+ 
+

@@ -10,6 +10,10 @@ class Dama extends Piece{
                     
                     board.whitePieces.splice(i,1); 
                     board.whitePieces.push(this);
+                    let id = '#cell-' + (piece.getPosition().getRow()) + (piece.getPosition().getColumn());
+                    
+                    $(id).children("img.white").remove();
+                    $(id).append('<img src="vermelho 01.png" width="50" height="50" class="white"/>');
                     super.move(piece.getPosition()); 
                     addClickEventOnThePieces(); // função dentro do arquivo gameControl
     
@@ -22,6 +26,10 @@ class Dama extends Piece{
               
                     board.blackPieces.splice(i,1); 
                     board.blackPieces.push(this); 
+                    let id = '#cell-' + (piece.getPosition().getRow()) + (piece.getPosition().getColumn()); 
+                   
+                    $(id).children("img.black").remove();
+                    $(id).append('<img src="preto 01.png" width="50" height="50" class="black"/>');
                     super.move(piece.getPosition()); 
                     addClickEventOnThePieces();        
     

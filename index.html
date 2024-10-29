@@ -33,24 +33,24 @@
             </p>
             
             <!-- Navegacao topico Sobre-->
-            <nav  class="container-topics" style="margin-top: 50px" onmouseover="animaTopicOver(this)" onmouseleave="animaTopicLeave(this)">
-                <div class="topic-line" ></div>
-                <p class="topic montserrat-medium-500" style="opacity: 1">SOBRE</p>
+            <nav  class="container-topics" style="margin-top: 50px" onmouseover="animaTopicOver(this)" onmouseleave="animaTopicLeave(this)" onclick="goTopic(this)" id="1">
+                <div class="topic-line"  id="topic-sobre" ></div>
+                <p class="topic montserrat-medium-500" id="sobre">SOBRE</p>
             </nav>
             <!-- Navegacao topico Experiências-->
-            <nav class="container-topics" onmouseover="animaTopicOver(this)" onmouseleave="animaTopicLeave(this)">
-                <div class="topic-line"></div>
-                <p class="topic montserrat-medium-500">EXPERIÊNCIAS</p>
+            <nav class="container-topics" onmouseover="animaTopicOver(this)" onmouseleave="animaTopicLeave(this)" onclick="goTopic(this)" id="2" >
+                <div class="topic-line"  id="topic-experiencias"></div>
+                <p class="topic montserrat-medium-500" id="experiencias">EXPERIÊNCIAS</p>
             </nav>
              <!-- Navegacao topico Projetos-->
-            <nav class="container-topics" onmouseover="animaTopicOver(this)" onmouseleave="animaTopicLeave(this)">
-                <div class="topic-line"></div>
-                <p class="topic montserrat-medium-500">PROJETOS</p>
+            <nav class="container-topics" onmouseover="animaTopicOver(this)" onmouseleave="animaTopicLeave(this)" onclick="goTopic(this)" id="3">
+                <div class="topic-line" id="topic-projetos"></div>
+                <p class="topic montserrat-medium-500" id="projetos">PROJETOS</p>
             </nav>
              <!-- Navegacao Redes sociais-->
             <nav class="container-redes-sociais">
                 <a href="https://github.com/wesley-coelho"><i class="fa fa-github icons-social-media" style="font-size: 25px;"></i></a>
-                <a href="#"><i class="fa fa-linkedin-square icons-social-media" style="font-size: 25px;"></i></a>
+                <a href="https://www.linkedin.com/in/wesley-ferreira-coelho-666a922ba"><i class="fa fa-linkedin-square icons-social-media" style="font-size: 25px;"></i></a>
                 <a href="#"><i class="fa fa-instagram icons-social-media" style="font-size: 25px;"></i></a>
                 <a href="#"><i class="fa fa-whatsapp icons-social-media" style="font-size: 25px;"></i></a>
             </nav>
@@ -132,9 +132,9 @@
                     
                     <div class="column-info-experience">                    
                         <div>
-                            <h1 class="title-info-experience futura">Sistema de gerenciamento de financiamento de veículos</h1>
-                            <p class="enterprise-experience">7 CURVAS VEÍCULOS</p>
-                            <i class="fa fa-arrow-circle-right"></i>
+                            <h1 class="title-info-experience futura" onmouseover="arrowMove(this)" onmouseout="arrowBack(this)">Sistema de gerenciamento de financiamento de veículos</h1>
+                            <i class="fa fa-arrow-circle-right setinha-experience" ></i>
+                            <p class="enterprise-experience">7 CURVAS VEÍCULOS</p>                           
                             <p class="info-experience ">
                                 O programa persiste os dados das entradas
                                 e saídas dos veículos e permite o controle de pagamento 
@@ -170,9 +170,9 @@
                     
                     <div class="column-info-experience">                    
                         <div>
-                            <h1 class="title-info-experience futura">Cadastro de contratos de financiamento de veículos</h1>
-                            <p class="enterprise-experience">7 CURVAS VEÍCULOS</p>
-                            <i class="fa fa-arrow-circle-right"></i>
+                            <h1 class="title-info-experience futura" onmouseover="arrowMove(this)" onmouseout="arrowBack(this)">Cadastro de contratos de financiamento de veículos</h1>
+                            <i class="fa fa-arrow-circle-right setinha-experience"></i>
+                            <p class="enterprise-experience">7 CURVAS VEÍCULOS</p>                
                             <p class="info-experience">
                                 Formulários em VBA para facilitar o controle dos contratos
                                 dos clientes. 
@@ -201,16 +201,20 @@
             </div>
 
             <section id="section-projects">
-                <article class="projects container-card">
+             
+                    <article class="projects container-card">
+                    
                     <div class="project-img">
-                        <img src="project-damas.png" width="100" class="img-project">
+                        <a href="jogoDamas-main/damas2.html"><img src="project-damas.png" width="100" class="img-project" ></a>
                     </div>
                     <div class="project-title-description-skills">
+                        <a href="jogoDamas-main/damas2.html">
                         <h2 class="title-project futura" onmouseover="arrowMove(this)" onmouseout="arrowBack(this)">Jogo de Damas</h2>
                         <i class="fa fa-arrow-circle-right setinha"></i>                       
                         <p class="info-project" >
                             Jogo multiplayer utilizando web socket.
                         </p>
+                    </a>
                         <diV class="tags">
                             <div class="tag-skill">HTML</div>
                             <div class="tag-skill">CSS</div>
@@ -218,27 +222,9 @@
                             <div class="tag-skill">JQuery</div>
                         </diV>
                     </div>
-                </article>
-
-                <article class="projects container-card">
-                    <div class="project-img">
-                        <img src="project-damas.png" width="100" class="img-project">
-                    </div>
-                    <div class="project-title-description-skills">
-                        <h2 class="title-project futura" onmouseover="arrowMove(this)" onmouseout="arrowBack(this)">Jogo de Damas</h2>
-                        <i class="fa fa-arrow-circle-right setinha" ></i>
-                        <p class="info-project" >
-                            Jogo multiplayer utilizando web socket.
-                        </p>
-                        <div  class="tags">
-                            <div class="tag-skill">HTML</div>
-                            <div class="tag-skill">CSS</div>
-                            <div class="tag-skill">Javascript</div>
-                            <div class="tag-skill">JQuery</div>
-                        </div>
-                        
-                    </div>
-                </article>
+        
+                    </article>
+            
             </section>
         </div>
         <script src="script.js"></script>

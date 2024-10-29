@@ -16,7 +16,7 @@ class Board{
             if( i % 2 == 0 ){
                 for( let j = 1; j < 8; j+=2){
                     let id = '#cell-' + i + j;                   
-                    $(id).append('<img src="peca-escura.png" width="50" height="50" class="black"/>');
+                    $(id).append('<img src="preto 02.png" width="50" height="50" class="black"/>');
                     let position = new Position(i,j) ;  
                     this.blackPieces.push(new Piece(position, 'black'));
 
@@ -25,7 +25,7 @@ class Board{
             else{
                 for( let j = 2; j < 9; j+=2){
                     let id = '#cell-' + i + j;            
-                    $(id).append('<img src="peca-escura.png" width="50" height="50" class="black"/>');
+                    $(id).append('<img src="preto 02.png" width="50" height="50" class="black"/>');
                     let position = new Position(i,j) ;
                     this.blackPieces.push(new Piece( position, 'black'));
                 }
@@ -37,7 +37,7 @@ class Board{
             if( i % 2 == 0 ){
                 for( let j = 1; j < 8; j+=2){
                     let id = '#cell-' + i + j;                      
-                    $(id).append('<img src="peca-clara.png" width="50" height="50" class="white"/>');
+                    $(id).append('<img src="vermelho 02.png" width="50" height="50" class="white"/>');
                     let position = new Position(i,j) ; 
                    this.whitePieces.push(new Piece(position, 'white'));
                 }
@@ -45,7 +45,7 @@ class Board{
             else{
                 for( let j = 2; j < 9; j+=2 ){
                     let id = '#cell-' + i + j; 
-                    $(id).append('<img src="peca-clara.png" width="50" height="50" class="white"/>');
+                    $(id).append('<img src="vermelho 02.png" width="50" height="50" class="white"/>');
                     let position = new Position(i,j) ; 
                     this.whitePieces.push(new Piece(position, 'white'));
                 }
