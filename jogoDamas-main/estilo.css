@@ -254,7 +254,8 @@ body{
         flex-direction: column;
         flex-wrap: wrap;
         align-items: center; 
-        transition: 0.3s;                           
+        transition: 0.3s; 
+        transform: rotate(90deg);                          
     }
     
     #tabuleiro:hover{
