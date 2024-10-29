@@ -15,8 +15,13 @@ class Board{
         for( let i = 1; i < 4; i++){
             if( i % 2 == 0 ){
                 for( let j = 1; j < 8; j+=2){
-                    let id = '#cell-' + i + j;                   
-                    $(id).append('<img src="preto 02.png" width="50" height="50" class="black"/>');
+                    let id = '#cell-' + i + j;
+                    if(window.screenX > 600){
+                        $(id).append('<img src="preto 02.png" width="50" height="50" class="black"/>');
+                    }else{
+                        $(id).append('<img src="preto 02.png" width="20" height="20" class="black"/>');
+                    }                   
+                    
                     let position = new Position(i,j) ;  
                     this.blackPieces.push(new Piece(position, 'black'));
 
@@ -24,8 +29,13 @@ class Board{
             }
             else{
                 for( let j = 2; j < 9; j+=2){
-                    let id = '#cell-' + i + j;            
-                    $(id).append('<img src="preto 02.png" width="50" height="50" class="black"/>');
+                    let id = '#cell-' + i + j; 
+                    if( window.screenX > 600 )   {
+                        $(id).append('<img src="preto 02.png" width="50" height="50" class="black"/>');
+                    } else{
+                        $(id).append('<img src="preto 02.png" width="20" height="20" class="black"/>');
+                    }       
+                    
                     let position = new Position(i,j) ;
                     this.blackPieces.push(new Piece( position, 'black'));
                 }
@@ -36,8 +46,13 @@ class Board{
         for( let i = 6; i < 9; i++){
             if( i % 2 == 0 ){
                 for( let j = 1; j < 8; j+=2){
-                    let id = '#cell-' + i + j;                      
-                    $(id).append('<img src="vermelho 02.png" width="50" height="50" class="white"/>');
+                    let id = '#cell-' + i + j; 
+                    if(window.screenX > 600){
+                        $(id).append('<img src="vermelho 02.png" width="50" height="50" class="white"/>');
+                    } else{
+                        $(id).append('<img src="vermelho 02.png" width="20" height="20" class="white"/>');
+                    }                    
+                    
                     let position = new Position(i,j) ; 
                    this.whitePieces.push(new Piece(position, 'white'));
                 }
@@ -45,7 +60,12 @@ class Board{
             else{
                 for( let j = 2; j < 9; j+=2 ){
                     let id = '#cell-' + i + j; 
-                    $(id).append('<img src="vermelho 02.png" width="50" height="50" class="white"/>');
+                    if(window.screenX > 600){
+                        $(id).append('<img src="vermelho 02.png" width="50" height="50" class="white"/>');
+                    }else{
+                        $(id).append('<img src="vermelho 02.png" width="20" height="20" class="white"/>');
+                    }
+                    
                     let position = new Position(i,j) ; 
                     this.whitePieces.push(new Piece(position, 'white'));
                 }
